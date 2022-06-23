@@ -6,8 +6,8 @@ import AllCampaigns from './components/AllCampaigns';
 import NewCampaign from './components/NewCampaign';
 import Campaign from './components/Campaign';
 import ErrorPage from './components/ErrorPage';
-import SingUp from './components/SingUp';
-import LogIn from './components/Login';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LogingPage';
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
      <Route path='/campaigns' element={<AllCampaigns />} />
      <Route path='/:id' element={<Campaign />} />
      <Route path='/new-campaign' element={<NewCampaign />} />
-     <Route path='/signup' element={<SingUp />} />
-     <Route path='/login' element={<LogIn />} />
+     <Route path='/signup' element={<SignupPage />} />
+     <Route path='/login' element={<LoginPage />} />
      <Route path='*' element={<ErrorPage />} />
 
      </Routes>
