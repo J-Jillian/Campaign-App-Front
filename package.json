@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "@mantine/core": "^4.2.10",
+<<<<<<< HEAD
     "@mantine/form": "^4.2.10",
+=======
+>>>>>>> 42e8fd7cc10443738cda20bcdd2bc52fc3317437
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
