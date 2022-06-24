@@ -35,10 +35,10 @@ const { isAuthenticated, logout } = useContext(SessionContext)
             <>
               <Anchor
                 component={NavLink}
-                to='/beers'
+                to='/campaigns'
                 style={({ isActive }) => (isActive ? { color: 'tomato' } : undefined)}
               >
-                Beers
+                Campaigns
               </Anchor>
               <Anchor
                 component={NavLink}
@@ -59,7 +59,7 @@ const { isAuthenticated, logout } = useContext(SessionContext)
           <Box sx={{ display: 'grid', gridTemplate: '1fr / 100px 1fr' }}>
             <Image />
             <Title order={3} align='center'>
-              Where can I get a drink ?
+              Campaing homepge
             </Title>
           </Box>
         </Header>

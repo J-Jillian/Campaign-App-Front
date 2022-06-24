@@ -4,11 +4,12 @@ import { useState } from 'react'
 import AddButton from '../components/AddButton'
 import Campaign from '../components/Campaign'
 import NewCampModal from '../components/NewCampaign'
-import { CampsContext } from '../contexts/CampsContext'
+import {CampContext} from '../contexts/CampContext'
 
 const AllCampsPage = () => {
-  const { camps } = useContext(CampsContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const {cat} = useContext(CampContext)
+  console.log(cat)
 
   return (
     <>
@@ -21,9 +22,6 @@ const AllCampsPage = () => {
           margin: '20px',
         }}
       >
-        {camps.map(camp => (
-          <Campaign key={camp._id} camp={camp} />
-        ))}
       </Box>
       <AddButton setIsModalOpen={setIsModalOpen} />
       <NewCampModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
