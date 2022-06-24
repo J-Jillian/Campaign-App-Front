@@ -41,7 +41,7 @@ const LoginPage = () => {
           required
           label='Username'
           description='Your unique username'
-          {...form.getInputProps('username')}
+      
         >
           <Input {...form.getInputProps('username')} />
         </InputWrapper>
