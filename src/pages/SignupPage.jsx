@@ -40,7 +40,7 @@ const SignupPage = () => {
           required
           label='Username'
           description='Your unique username'
-        
+       
         >
           <Input {...form.getInputProps('username')} />
         </InputWrapper>

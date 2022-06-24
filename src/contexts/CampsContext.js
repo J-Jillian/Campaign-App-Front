@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { fetchCamps } from '../utils/helper'
 import { SessionContext } from './SessionContext'
 
 const CampsContext = createContext()

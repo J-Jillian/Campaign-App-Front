@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { SessionContext } from '../contexts/SessionContext'
 import { login } from '../utils/helper'
 
+
 const LoginPage = () => {
   const navigate = useNavigate()
   const { authenticateUser } = useContext(SessionContext)
@@ -41,6 +42,7 @@ const LoginPage = () => {
           required
           label='Username'
           description='Your unique username'
+      
         >
           <Input {...form.getInputProps('username')} />
         </InputWrapper>
