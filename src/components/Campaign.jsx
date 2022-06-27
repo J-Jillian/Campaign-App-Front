@@ -1,17 +1,28 @@
 import { Card, Text } from '@mantine/core'
 import { Link } from 'react-router-dom'
+import CampSection from './CampSection'
 
-const Campaign = ({ bar }) => {
+const Campaign = ({ camp }) => {
   return (
-    <Card shadow='sm' p='xl' component={Link} to={`/bars/${bar._id}`}>
-      <Card.Section>
-        <Text weight={500} size='lg' align='center'>
-          {bar.name}
-        </Text>
-      </Card.Section>
+    <Card
+      shadow='sm'
+      p='xl'
+      component={Link}
+      to={`/campaign/${camp._id}`}
+      sx={{
+        '&:hover': {
+          backgroundColor: '#EEEEEE',
+        },
+      }}
+    >
+      <CampSection name={camp.campaignName} />
 
       <Text weight={500} align='center'>
-        Number of beers: {bar.beers.length}
+        {camp.discription}
+      </Text>
+
+      <Text size='sm' align='center'>
+        {camp.fundsFor}
       </Text>
     </Card>
   )

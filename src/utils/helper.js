@@ -49,10 +49,11 @@ export const checkToken = async token => {
   const response = await fetch(`${BASE_API_URL}/auth/verify`, {
     method: 'GET',
     headers: {
-      Authorization: `User ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   })
   const parsed = await response.json()
-
+console.log("HIEEEEER",parsed)
   return parsed
+
 }

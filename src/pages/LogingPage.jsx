@@ -19,7 +19,7 @@ const LoginPage = () => {
   const logUser = async credentials => {
     try {
       const response = await login(credentials)
-      console.log(response)
+      console.log("Login Res",response)
       if (response.status === 'KO') {
         throw new Error(response.message)
       } else {

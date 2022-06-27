@@ -4,7 +4,7 @@ import { SessionContext } from '../contexts/SessionContext'
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated } = useContext(SessionContext)
-
+console.log(isAuthenticated)
   if (!isAuthenticated) {
     return <Navigate to='/login' />
   }

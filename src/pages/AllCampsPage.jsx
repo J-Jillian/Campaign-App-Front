@@ -3,30 +3,32 @@ import { useContext } from 'react'
 import { useState } from 'react'
 import AddButton from '../components/AddButton'
 import Campaign from '../components/Campaign'
-import NewCampModal from '../components/NewCampaign'
-import {CampContext} from '../contexts/CampContext'
+import NewCampaign from '../components/AddProject'
+import { CampContext } from '../contexts/CampContext'
 
 const AllCampsPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const {cat} = useContext(CampContext)
-  console.log(cat)
-
-  return (
-    <>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplate: '1fr / 1fr 1fr',
-          gridAutoRows: '1fr',
-          gap: '20px',
-          margin: '20px',
-        }}
-      >
-      </Box>
-      <AddButton setIsModalOpen={setIsModalOpen} />
-      <NewCampModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-    </>
-  )
-}
-
-export default AllCampsPage
+    const { camps } = useContext(CampContext)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+  
+    return (
+      <>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplate: '1fr / 1fr 1fr',
+            gridAutoRows: '1fr',
+            gap: '20px',
+            margin: '20px',
+          }}
+        >
+          {camps.map(camp => (
+            <Campaign key={camp._id} camp={camp} />
+          ))}
+        </Box>
+        <AddButton setIsModalOpen={setIsModalOpen} />
+        <NewCampaign isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      </>
+    )
+  }
+  
+  export default AllCampsPage
