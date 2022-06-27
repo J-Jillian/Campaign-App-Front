@@ -1,6 +1,7 @@
 import { Card, Text } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import CampSection from './CampSection'
+import React from "react";
 
 const Campaign = ({ camp }) => {
   return (

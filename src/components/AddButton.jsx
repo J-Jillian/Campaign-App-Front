@@ -1,5 +1,6 @@
 import { ActionIcon } from '@mantine/core'
 import { Plus } from 'tabler-icons-react'
+import React from "react";
 
 const AddButton = ({ setIsModalOpen }) => {
   return (

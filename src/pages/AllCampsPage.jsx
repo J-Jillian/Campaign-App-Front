@@ -5,6 +5,8 @@ import AddButton from '../components/AddButton'
 import Campaign from '../components/Campaign'
 import NewCampaign from '../components/AddProject'
 import { CampContext } from '../contexts/CampContext'
+import React from "react";
+
 
 const AllCampsPage = () => {
     const { camps } = useContext(CampContext)

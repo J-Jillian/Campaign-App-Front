@@ -2,6 +2,7 @@ import { Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine
 import { useForm } from '@mantine/form'
 import { useNavigate } from 'react-router-dom'
 import { signup } from '../utils/helper'
+import React from "react";
 
 const SignupPage = () => {
   const navigate = useNavigate()

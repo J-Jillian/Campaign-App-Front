@@ -10,6 +10,7 @@ import PrivateRoute from './components/PrivateRoute'
 import AnonymousRoute from './components/AnonymousRoute'
 import {CampContextProvider} from './contexts/CampContext'
 import AllCampsPage from './pages/AllCampsPage';
+import React from "react";
 
 
 function App() {
