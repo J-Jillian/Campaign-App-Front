@@ -27,7 +27,9 @@ const SignupPage = () => {
   }
 
   const handleSubmit = values => {
+    console.log(values)
     createUser(values)
+
   }
 
   return (

@@ -5,4 +5,4 @@ function NewCampaign(props) {
     return ( <h1>NewCampaign</h1> );
 }
 
-export default NewCampaign;
+export default NewBeerModal

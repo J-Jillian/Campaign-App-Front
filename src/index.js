@@ -9,13 +9,13 @@ import { SessionContextProvider } from './contexts/SessionContext'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
   <SessionContextProvider>
-  
+    <BrowserRouter>
+
     <App />
-    
+    </BrowserRouter>
   </SessionContextProvider>
-  </BrowserRouter>
+  
   </React.StrictMode>
 );
 
