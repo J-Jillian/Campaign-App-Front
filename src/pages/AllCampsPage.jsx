@@ -28,8 +28,8 @@ const AllCampsPage = () => {
             <Campaign key={camp._id} camp={camp} />
           ))}
         </Box>
-        <Link to={"/campaign/create"}>Create a Capaign</Link>
-        {/* <NewCampaign isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
+      
+      
       </>
     )
   }

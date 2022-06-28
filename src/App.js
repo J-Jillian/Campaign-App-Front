@@ -38,7 +38,7 @@ function App() {
               }
             />
   
-       <Route path='/:id' element={
+       <Route path='/campaignId' element={
                 <PrivateRoute>
                   <Campaign />
                 </PrivateRoute>

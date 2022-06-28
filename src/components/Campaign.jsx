@@ -9,7 +9,7 @@ const Campaign = ({ camp }) => {
       shadow='sm'
       p='xl'
       component={Link}
-      to={`/campaign/${camp._id}`}
+      to={`/campaigns/${camp._id}`}
       sx={{
         '&:hover': {
           backgroundColor: '#EEEEEE',

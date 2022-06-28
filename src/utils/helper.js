@@ -1,7 +1,7 @@
 import { BASE_API_URL } from './constants'
 
 export const fetchCamps = async setter => {
-  const response = await fetch('http://localhost:5005/api/campaign')
+  const response = await fetch('http://localhost:5005/api/campaigns')
   const parsed = await response.json()
   setter(parsed)
 }
@@ -23,7 +23,7 @@ export const apiBase =
   }
 
 export const campaignBase = (token)=> async(endpoint, credentials)=>{
-  const response = await fetch(`${BASE_API_URL}/campaign/${endpoint}`,{
+  const response = await fetch(`${BASE_API_URL}/campaigns/${endpoint}`,{
     method: 'POST',
     body: credentials,
     headers: {

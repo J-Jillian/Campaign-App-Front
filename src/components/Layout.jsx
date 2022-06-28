@@ -34,6 +34,14 @@ const { isAuthenticated, logout } = useContext(SessionContext)
             </>
           ) : (
             <>
+             <Anchor
+                component={NavLink}
+                to='/'
+                style={({ isActive }) => (isActive ? { color: 'tomato' } : undefined)}
+              >
+              Home
+              </Anchor>
+
               <Anchor
                 component={NavLink}
                 to='/campaigns'
@@ -43,11 +51,16 @@ const { isAuthenticated, logout } = useContext(SessionContext)
               </Anchor>
               <Anchor
                 component={NavLink}
-                to='/bars'
+                to='/profile'
                 style={({ isActive }) => (isActive ? { color: 'tomato' } : undefined)}
               >
-                Abaut us
+                Profile
               </Anchor>
+
+             
+
+
+
               <ActionIcon onClick={logout}>
                 <Logout size={48} strokeWidth={2} color={'black'} />
               </ActionIcon>
@@ -73,7 +86,7 @@ const { isAuthenticated, logout } = useContext(SessionContext)
     >
       {children}
     </AppShell>
-  )
+  
 
         </div>
         

@@ -17,7 +17,7 @@ const CampDetailsPage = () => {
   const [needRefresh, setNeedRefresh] = useState(false)
 
   const fetchCamp = async () => {
-    const response = await apiWithToken(`camps/${campaignId}`)
+    const response = await apiWithToken(`campaigns/${campaignId}`)
     setCamp(response)
   }
 
@@ -33,8 +33,8 @@ const CampDetailsPage = () => {
   }, [needRefresh])
 
   const deleteCamp = async () => {
-    await fetch(`http://localhost:5005/api/camps/${campaignId}`, { method: 'DELETE' })
-    navigate('/camps')
+    await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, { method: 'DELETE' })
+    navigate('/campaigns')
   }
 
   const handleDelete = () => {
