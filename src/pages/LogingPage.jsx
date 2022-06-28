@@ -1,10 +1,13 @@
-import { Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
+import {Image, Text, Space, Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
 import { useForm } from '@mantine/hooks'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SessionContext } from '../contexts/SessionContext'
 import { login } from '../utils/helper'
 import React from "react";
+import { At } from 'tabler-icons-react';
+import handlogin from '../img/handlogin.png'
+
 
 
 const LoginPage = () => {
@@ -35,22 +38,37 @@ const LoginPage = () => {
     logUser(values)
   }
 
+
+
+  
   return (
-    <Box>
-      <Title>Login</Title>
+    <Box sx={{ maxWidth: 340 }} mx="auto">
+       <Image
+        
+        src={handlogin}
+      />
+      <Title>Hello</Title>
+      <Space h="md" />
+      <Space h="md" />
+      <Text size="xs"  >Welcome to Funrasing!</Text>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <InputWrapper
           required
           label='Username'
-          description='Your unique username'
       
         >
-          <Input {...form.getInputProps('username')} />
+                <Space h="md" />
+
+          <Input icon={<At />}
+      placeholder="Your email here"
+      radius="lg" {...form.getInputProps('username')} />
         </InputWrapper>
-        <InputWrapper required label='Password' description='Your password'>
-          <PasswordInput {...form.getInputProps('password')} />
+        <InputWrapper required label='Password' >
+          <PasswordInput radius="lg" {...form.getInputProps('password')} />
         </InputWrapper>
-        <Button type='submit'>Login</Button>
+        <Space h="md" />
+
+        <Button type='submit' variant="outline" radius="xl" size="xl" uppercase>Login</Button>
       </form>
     </Box>
   )

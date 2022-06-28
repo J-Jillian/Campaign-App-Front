@@ -1,7 +1,7 @@
 import { Box } from '@mantine/core'
 import { useContext } from 'react'
 import { useState } from 'react'
-import AddButton from '../components/AddButton'
+import AddCampaign from '../components/AddCampaign'
 import Campaign from '../components/Campaign'
 import NewCampaign from '../components/AddProject'
 import { CampContext } from '../contexts/CampContext'
@@ -27,8 +27,8 @@ const AllCampsPage = () => {
             <Campaign key={camp._id} camp={camp} />
           ))}
         </Box>
-        <AddButton setIsModalOpen={setIsModalOpen} />
-        <NewCampaign isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        <AddCampaign setIsModalOpen={setIsModalOpen} />
+        {/* <NewCampaign isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
       </>
     )
   }

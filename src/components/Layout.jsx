@@ -46,7 +46,7 @@ const { isAuthenticated, logout } = useContext(SessionContext)
                 to='/bars'
                 style={({ isActive }) => (isActive ? { color: 'tomato' } : undefined)}
               >
-                Bars
+                Abaut us
               </Anchor>
               <ActionIcon onClick={logout}>
                 <Logout size={48} strokeWidth={2} color={'black'} />

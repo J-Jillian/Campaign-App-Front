@@ -1,8 +1,9 @@
-import { Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
+import { Space, Box, Text, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useNavigate } from 'react-router-dom'
 import { signup } from '../utils/helper'
 import React from "react";
+import { At } from 'tabler-icons-react';
 
 const SignupPage = () => {
   const navigate = useNavigate()
@@ -34,23 +35,31 @@ const SignupPage = () => {
   }
 
   return (
-    <Box>
-      <Title>Signup</Title>
+    <body className='bg-yellow'>
+    <Box sx={{ maxWidth: 340 }} mx="auto">
+      <Title>Sign up</Title>
+      <Space h="md" />
+      <Text size="xs"  >Launch a crowdfunding in 5 minutes or donate generously.</Text>
+      <Space h="md" />
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <InputWrapper
           required
           label='Username'
-          description='Your unique username'
        
         >
-          <Input {...form.getInputProps('username')} />
+          <Space h="md" />
+          <Input icon={<At />}
+      placeholder="Your email here"
+      radius="lg" {...form.getInputProps('username')} />
         </InputWrapper>
-        <InputWrapper required label='Password' description='Your password'>
-          <PasswordInput {...form.getInputProps('password')} />
+        <InputWrapper required label='Password'>
+          <PasswordInput radius="lg" {...form.getInputProps('password')} />
         </InputWrapper>
-        <Button type='submit'>Register</Button>
+        <Space h="md" />
+        <Button type='submit' variant="outline" radius="xl" size="xl" uppercase>Register</Button>
       </form>
     </Box>
+    </body>
   )
 }
 
