@@ -32,9 +32,9 @@ function App() {
             />
 
 <Route path='/campaigns/create' element={
-                <PrivateRoute>
+                
                   <AddCampaign />
-                </PrivateRoute>
+              
               }
             />
   

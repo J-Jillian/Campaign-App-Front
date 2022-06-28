@@ -22,6 +22,26 @@ export const apiBase =
     return parsed
   }
 
+export const campaignBase = (token)=> async(endpoint, credentials)=>{
+  const response = await fetch(`${BASE_API_URL}/campaign/${endpoint}`,{
+    method: 'POST',
+    body: credentials,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  const parsed = await response.json()
+  return parsed
+  }
+
+  export const creatingCampaign = async (credentials ) => {
+    const response = await campaignBase('create', credentials )
+    return response
+  }
+
+  
+
+
 export const authBase = async (endpoint, credentials) => {
   const response = await fetch(`${BASE_API_URL}/auth/${endpoint}`, {
     method: 'POST',
@@ -53,7 +73,7 @@ export const checkToken = async token => {
     },
   })
   const parsed = await response.json()
-console.log("HIEEEEER",parsed)
+
   return parsed
 
 }

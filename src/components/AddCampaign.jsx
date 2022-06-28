@@ -1,11 +1,14 @@
 import { useState } from "react"
 import React from "react";
+import { useContext } from 'react'
 import { useForm } from '@mantine/hooks'
+import { CampContext } from '../contexts/CampContext'
 import {TextInput, Image, Text, Space, Box, Button, Input, InputWrapper, Title } from '@mantine/core'
 
 
 
 const AddCampaign = () => {
+  const { camps } = useContext(CampContext) 
 
 // const [campaignName, setName] = useState('');
 // const [description, setDescription]= useState('');
@@ -80,7 +83,7 @@ const handleSubmit = event => {
         
           
           >
-            <Input type="number" {...form.getInputProps('totalAmount')} />
+            <Input rightSection="$" type="number" {...form.getInputProps('totalAmount')} />
 </InputWrapper>
 
 

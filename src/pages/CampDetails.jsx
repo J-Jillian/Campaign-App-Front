@@ -8,7 +8,7 @@ import UpdateCampModal from '../components/UpdateCampModal'
 import { SessionContext } from '../contexts/SessionContext'
 
 const CampDetailsPage = () => {
-  const { campId } = useParams()
+  const { campaignId } = useParams()
   const navigate = useNavigate()
   const { apiWithToken } = useContext(SessionContext)
 
@@ -17,7 +17,7 @@ const CampDetailsPage = () => {
   const [needRefresh, setNeedRefresh] = useState(false)
 
   const fetchCamp = async () => {
-    const response = await apiWithToken(`camps/${campId}`)
+    const response = await apiWithToken(`camps/${campaignId}`)
     setCamp(response)
   }
 
@@ -33,7 +33,7 @@ const CampDetailsPage = () => {
   }, [needRefresh])
 
   const deleteCamp = async () => {
-    await fetch(`http://localhost:5005/api/camps/${campId}`, { method: 'DELETE' })
+    await fetch(`http://localhost:5005/api/camps/${campaignId}`, { method: 'DELETE' })
     navigate('/camps')
   }
 
@@ -57,7 +57,7 @@ const CampDetailsPage = () => {
       <UpdateCampModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
-        campId={campId}
+        campaignId={campaignId}
         camp={camp}
         setNeedRefresh={setNeedRefresh}
       />

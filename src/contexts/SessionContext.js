@@ -11,7 +11,6 @@ const SessionContextProvider = ({ children }) => {
   const apiWithToken = apiBase(token)
 
   const authenticateUser = responseToken => {
-    console.log("Hiii",responseToken )
     setToken(responseToken)
     localStorage.setItem('authToken', responseToken)
     setIsAuthenticated(true)
