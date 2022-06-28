@@ -77,9 +77,10 @@ const handleSubmit = event => {
      
           label="Campaign Goal"
           placeholder="Total Amount"
+        
           
           >
-            <Input {...form.getInputProps('totalAmount')} />
+            <Input type="number" {...form.getInputProps('totalAmount')} />
 </InputWrapper>
 
 

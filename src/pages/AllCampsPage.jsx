@@ -6,6 +6,7 @@ import Campaign from '../components/Campaign'
 import NewCampaign from '../components/AddProject'
 import { CampContext } from '../contexts/CampContext'
 import React from "react";
+import { Link } from 'react-router-dom'
 
 
 const AllCampsPage = () => {
@@ -27,7 +28,7 @@ const AllCampsPage = () => {
             <Campaign key={camp._id} camp={camp} />
           ))}
         </Box>
-        <AddCampaign setIsModalOpen={setIsModalOpen} />
+        <Link to="/campaign/create">Create a Capaign</Link>
         {/* <NewCampaign isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
       </>
     )

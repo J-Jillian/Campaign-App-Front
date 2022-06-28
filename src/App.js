@@ -11,6 +11,7 @@ import AnonymousRoute from './components/AnonymousRoute'
 import {CampContextProvider} from './contexts/CampContext'
 import AllCampsPage from './pages/AllCampsPage';
 import React from "react";
+import AddCampaign from './components/AddCampaign';
 
 
 function App() {
@@ -26,6 +27,13 @@ function App() {
        <Route path='/campaigns' element={
                 <PrivateRoute>
                   <AllCampsPage />
+                </PrivateRoute>
+              }
+            />
+
+<Route path='/campaigns/create' element={
+                <PrivateRoute>
+                  <AddCampaign />
                 </PrivateRoute>
               }
             />
