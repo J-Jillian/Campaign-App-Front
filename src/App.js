@@ -12,6 +12,7 @@ import {CampContextProvider} from './contexts/CampContext'
 import AllCampsPage from './pages/AllCampsPage';
 import React from "react";
 import AddCampaign from './components/AddCampaign';
+import ProfilePage from './pages/ProfilePage';
 
 
 function App() {
@@ -35,6 +36,14 @@ function App() {
                 
                   <AddCampaign />
               
+              }
+            />
+
+<Route path='/profile' element={
+                <PrivateRoute>
+                  <ProfilePage />
+
+                </PrivateRoute>
               }
             />
   

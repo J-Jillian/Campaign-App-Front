@@ -9,14 +9,15 @@ import { ActionIcon, Anchor, AppShell, Box, Header, Image, Navbar, Title } from 
 const Layout = ({ children }) => {
 const { isAuthenticated, logout } = useContext(SessionContext)
 
-    return (
+
+return (
         <div>
-                <AppShell
-      padding='md'
-      navbar={
-        <Navbar width={{ base: 100 }} p='xs'>
-          {!isAuthenticated ? (
-            <>
+<AppShell
+padding='md'
+navbar={
+<Navbar width={{ base: 100 }} p='xs'>
+{!isAuthenticated ? (
+<>
               <Anchor
                 component={NavLink}
                 to='/signup'

@@ -1,10 +1,10 @@
 import { BASE_API_URL } from './constants'
 
-export const fetchCamps = async setter => {
-  const response = await fetch('http://localhost:5005/api/campaigns')
-  const parsed = await response.json()
-  setter(parsed)
-}
+// export const fetchCamps = async setter => {
+//   const response = await fetch('http://localhost:5005/api/campaigns')
+//   const parsed = await response.json()
+//   setter(parsed)
+// }
 
 export const apiBase =
   token =>
@@ -13,7 +13,7 @@ export const apiBase =
       method,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `User ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(payload),
     })
@@ -23,10 +23,11 @@ export const apiBase =
   }
 
 export const campaignBase = (token)=> async(endpoint, credentials)=>{
-  const response = await fetch(`${BASE_API_URL}/campaigns/${endpoint}`,{
+  const response = await fetch(`${BASE_API_URL}/api/campaigns/${endpoint}`,{
     method: 'POST',
     body: credentials,
     headers: {
+      'Content-Type': 'application/json', //will not work for file
       Authorization: `Bearer ${token}`,
     },
   })

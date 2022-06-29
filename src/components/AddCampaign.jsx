@@ -4,21 +4,14 @@ import { useContext } from 'react'
 import { useForm } from '@mantine/hooks'
 import { CampContext } from '../contexts/CampContext'
 import {TextInput, Image, Text, Space, Box, Button, Input, InputWrapper, Title } from '@mantine/core'
-
+import { SessionContext } from "../contexts/SessionContext";
+import { useNavigate } from 'react-router-dom'
+import {creatingCampaign} from "../utils/helper"
 
 
 const AddCampaign = () => {
-  const { camps } = useContext(CampContext) 
-
-// const [campaignName, setName] = useState('');
-// const [description, setDescription]= useState('');
-// const [image, setImage] = useState('');
-// const [place, setPlace] = useState('');
-// const [fundsFor, setFundsFor]= useState('');
-// const [totalAmount, settotalAmount]= useState('');
-// const [creator, setCreator]= useState('');
-// const [donations, setDonations]= useState('');
-
+  const {campWithToken}= useContext(SessionContext);
+  const navigate = useNavigate();
 
 const form = useForm({
   initialValues:{
@@ -30,8 +23,20 @@ const form = useForm({
   }
 })
 
+const newCampaign = async newCamp => {
+  try {
+    const response = await campWithToken("create",JSON.stringify(newCamp));
+    console.log(response, "camapaña creada")
+  } 
+  catch (error) {
+  console.log("error al crear campaña", error)  
+ 
+  }
+}
+
+
 const handleSubmit = event => {
-  console.log(event, "event")
+  newCampaign(event);
 }
 
   return (
@@ -88,7 +93,7 @@ const handleSubmit = event => {
 
 
 
-<Button htmlType="submit" variant="outline" color="dark" radius="xl" size="lg">
+<Button type="submit" variant="outline" color="dark" radius="xl" size="lg">
       Create a campaign
     </Button>
     </form>

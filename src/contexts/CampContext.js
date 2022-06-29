@@ -10,17 +10,17 @@ const CampContextProvider = ({ children }) => {
   const { isAuthenticated, apiWithToken } = useContext(SessionContext)
 
   
+  const fetchCamps = async () => {
+      const response = await apiWithToken('campaigns')
+      console.log(response)
+      setCamps(response)
+    }
 
   useEffect(() => {
-    const fetchCamps = async () => {
-        const response = await apiWithToken('campaign')
-        console.log(response)
-        setCamps(response)
-      }
     if (isAuthenticated) {
      fetchCamps()
     }
-  }, [isAuthenticated,apiWithToken])
+  }, [isAuthenticated])
 
   return <CampContext.Provider value={{ camps }}>{children}</CampContext.Provider>
 }

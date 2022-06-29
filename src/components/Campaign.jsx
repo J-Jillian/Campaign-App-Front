@@ -25,11 +25,7 @@ const Campaign = ({ camp }) => {
       </Card.Section>
       {/* <CampSection name={camp.campaignName} /> */}
 
-      <Text weight={500} align='center'>
-        
-      </Text>
-
-      <Text size='s' align='center'>
+        <Text size='s' align='center'>
         {camp.CampaignName}
       </Text>
     </Card>

@@ -6,13 +6,14 @@ import Campaign from '../components/Campaign'
 import NewCampaign from '../components/AddProject'
 import { CampContext } from '../contexts/CampContext'
 import React from "react";
-import { Link } from 'react-router-dom'
+
 
 
 const AllCampsPage = () => {
     const { camps } = useContext(CampContext)
     const [isModalOpen, setIsModalOpen] = useState(false)
-  
+    
+
     return (
       <>
         <Box
