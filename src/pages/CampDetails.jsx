@@ -1,23 +1,26 @@
 import { ActionIcon, Paper, Text, Title } from '@mantine/core'
 import { useContext } from 'react'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { Pencil, Trash } from 'tabler-icons-react'
-
+import React from 'react'
 import UpdateCampModal from '../components/UpdateCampModal'
 import { SessionContext } from '../contexts/SessionContext'
 
-const CampDetailsPage = () => {
+
+const CampDetails = () => {
   const { campaignId } = useParams()
   const navigate = useNavigate()
   const { apiWithToken } = useContext(SessionContext)
-
+  const location = useLocation()
   const [camp, setCamp] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [needRefresh, setNeedRefresh] = useState(false)
 
   const fetchCamp = async () => {
+    console.log('fetchCamp', campaignId)
     const response = await apiWithToken(`campaigns/${campaignId}`)
+    console.log(response, "detalles")
     setCamp(response)
   }
 
@@ -34,7 +37,7 @@ const CampDetailsPage = () => {
 
   const deleteCamp = async () => {
     await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, { method: 'DELETE' })
-    navigate('/campaigns')
+    navigate('/profile')
   }
 
   const handleDelete = () => {
@@ -47,6 +50,9 @@ const CampDetailsPage = () => {
         <Title order={2}>{camp.CampaignName}</Title>
         <Text>{camp.description}</Text>
         <Text>{camp.place}</Text>
+        <Text>{camp.fundsFor}</Text>
+        <Text>{camp.totalAmount}</Text>
+        
         <ActionIcon onClick={() => setIsModalOpen(true)}>
           <Pencil size={48} strokeWidth={2} color={'blue'} />
         </ActionIcon>
@@ -65,4 +71,4 @@ const CampDetailsPage = () => {
   )
 }
 
-export default CampDetailsPage
+export default CampDetails

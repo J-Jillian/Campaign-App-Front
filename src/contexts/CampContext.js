@@ -8,6 +8,8 @@ const CampContext = createContext()
 const CampContextProvider = ({ children }) => {
   const [camps, setCamps] = useState([])
   const { isAuthenticated, apiWithToken } = useContext(SessionContext)
+  const [needRefresh, setNeedRefresh] = useState(true)
+
 
   
   const fetchCamps = async () => {
@@ -21,6 +23,15 @@ const CampContextProvider = ({ children }) => {
      fetchCamps()
     }
   }, [isAuthenticated])
+
+ 
+  useEffect(() => {
+    if (needRefresh) {
+      fetchCamps()
+      setNeedRefresh(false)
+    }
+  }, [needRefresh])
+
 
   return <CampContext.Provider value={{ camps }}>{children}</CampContext.Provider>
 }

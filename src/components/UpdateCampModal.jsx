@@ -1,26 +1,30 @@
 import { Button, Input, InputWrapper, Modal, NumberInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-const UpdateBeerModal = ({ isModalOpen, setIsModalOpen, beerId, beer, setNeedRefresh }) => {
+
+const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, campaignId }) => {
   const form = useForm({
     initialValues: {
-      name: '',
-      tagline: '',
-      volume: 0.35,
+      CampaignName: '',
+      place: '',
+      fundsFor: '',
+      totalAmount:'0'
+
     },
   })
 
   useEffect(() => {
     form.setValues({
-      name: beer.name,
-      tagline: beer.tagline,
-      volume: beer.volume,
+       CampaignName: camp.CampaignName,
+      place: camp.place,
+      fundsFor: camp.fundsFor,
+      totalAmount:camp.totalAmount
     })
-  }, [beer])
+  }, [camp])
 
-  const updateBeer = async newValues => {
-    await fetch(`http://localhost:5005/api/beers/${beerId}`, {
+  const updateCamp = async newValues => {
+    await fetch(`http://localhost:5005/api/capaigns/${campaignId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -32,25 +36,61 @@ const UpdateBeerModal = ({ isModalOpen, setIsModalOpen, beerId, beer, setNeedRef
   }
 
   const handleSubmit = values => {
-    updateBeer(values)
+    updateCamp(values)
   }
 
   return (
     <Modal opened={isModalOpen} onClose={() => setIsModalOpen(false)} title='Update beer'>
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <InputWrapper required label='Name' description='The name of the new beer'>
-          <Input {...form.getInputProps('name')} />
-        </InputWrapper>
-        <InputWrapper required label='Tagline' description='The tagline of the new beer'>
-          <Input {...form.getInputProps('tagline')} />
-        </InputWrapper>
-        <InputWrapper required label='Volume' description='The volume of the new beer'>
-          <NumberInput precision={2} min='0' {...form.getInputProps('volume')} />
-        </InputWrapper>
+      <InputWrapper
+      
+      label="Campaign Name"
+      placeholder="Name"
+      > 
+      <Input {...form.getInputProps('CampaignName')} />
+      </InputWrapper>
+
+      <InputWrapper
+     
+          label="Campaign description"
+          placeholder="description">
+          <Input {...form.getInputProps('description')} />
+       
+          </InputWrapper>
+
+          <InputWrapper
+      
+          label="Where is the Campaign going to take place"
+          placeholder="place"
+        >
+           <Input {...form.getInputProps('place')} />
+          </InputWrapper>
+
+<InputWrapper
+      
+          label="What are the Funds For"
+          placeholder="Funds For"
+        >
+           <Input {...form.getInputProps('fundsFor')} />
+          </InputWrapper>
+
+<InputWrapper
+     
+          label="Campaign Goal"
+          placeholder="Total Amount"
+        
+          
+          >
+            <NumberInput precision={2} rightSection="$" min='0' {...form.getInputProps('totalAmount')} />
+</InputWrapper>
+
+
+
+       
         <Button type='submit'>Update</Button>
       </form>
     </Modal>
   )
 }
 
-export default UpdateBeerModal
+export default UpdateCampModal

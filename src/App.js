@@ -13,6 +13,7 @@ import AllCampsPage from './pages/AllCampsPage';
 import React from "react";
 import AddCampaign from './components/AddCampaign';
 import ProfilePage from './pages/ProfilePage';
+import CampDetails from './pages/CampDetails';
 
 
 function App() {
@@ -47,9 +48,9 @@ function App() {
               }
             />
   
-       <Route path='/campaignId' element={
+       <Route path='/campaigns/:campaignId' element={
                 <PrivateRoute>
-                  <Campaign />
+                  <CampDetails />
                 </PrivateRoute>
               }
             />

@@ -12,8 +12,12 @@ import React from "react";
 const AllCampsPage = () => {
     const { camps } = useContext(CampContext)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    
 
+    
+    
+if(!camps){
+  return (<p>...is loading</p>)
+}
     return (
       <>
         <Box

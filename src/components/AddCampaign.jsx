@@ -3,7 +3,7 @@ import React from "react";
 import { useContext } from 'react'
 import { useForm } from '@mantine/hooks'
 import { CampContext } from '../contexts/CampContext'
-import {TextInput, Image, Text, Space, Box, Button, Input, InputWrapper, Title } from '@mantine/core'
+import {NumberInput, TextInput, Image, Text, Space, Box, Button, Input, InputWrapper, Title } from '@mantine/core'
 import { SessionContext } from "../contexts/SessionContext";
 import { useNavigate } from 'react-router-dom'
 import {creatingCampaign} from "../utils/helper"
@@ -19,14 +19,14 @@ const form = useForm({
     description:"",
     place:"",
     fundsFor:"",
-    totalAmount:"",
+    totalAmount:"0",
   }
 })
 
 const newCampaign = async newCamp => {
   try {
     const response = await campWithToken("create",JSON.stringify(newCamp));
-    console.log(response, "camapaña creada")
+    navigate('/profile')
   } 
   catch (error) {
   console.log("error al crear campaña", error)  
@@ -88,7 +88,7 @@ const handleSubmit = event => {
         
           
           >
-            <Input rightSection="$" type="number" {...form.getInputProps('totalAmount')} />
+            <NumberInput precision={2} rightSection="$" min='0' {...form.getInputProps('totalAmount')} />
 </InputWrapper>
 
 
