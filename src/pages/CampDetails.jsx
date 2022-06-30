@@ -7,12 +7,14 @@ import React from 'react'
 import UpdateCampModal from '../components/UpdateCampModal'
 import { SessionContext } from '../contexts/SessionContext'
 import { CampContext } from '../contexts/CampContext'
+import {BASE_API_URL} from '../utils/constants'
+
 
 
 const CampDetails = () => {
   const { campaignId } = useParams()
   const navigate = useNavigate()
-  const { apiWithToken } = useContext(SessionContext)
+  const { apiWithToken, token} = useContext(SessionContext)
   const location = useLocation()
   const [camp, setCamp] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -39,7 +41,12 @@ const CampDetails = () => {
   }, [needRefresh])
 
   const deleteCamp = async () => {
-    await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, { method: 'DELETE' })
+    await fetch(`${BASE_API_URL}/campaigns/${campaignId}`, { 
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}` 
+      }
+    })
     setAllCampsRefresh(true)
     navigate('/profile')
   }

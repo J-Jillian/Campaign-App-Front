@@ -4,8 +4,7 @@ import React, { useEffect } from 'react'
 import { CampContext } from '../contexts/CampContext'
 import { useContext } from 'react'
 import { SessionContext } from '../contexts/SessionContext'
-
-
+import {BASE_API_URL} from '../utils/constants'
 
 const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, campaignId }) => {
   const form = useForm({
@@ -32,7 +31,7 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
   }, [camp])
 
   const updateCamp = async newValues => {
-    await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, {
+    await fetch(`${BASE_API_URL}/api/campaigns/${campaignId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
