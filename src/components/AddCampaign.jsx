@@ -12,6 +12,7 @@ import {creatingCampaign} from "../utils/helper"
 const AddCampaign = () => {
   const {campWithToken}= useContext(SessionContext);
   const navigate = useNavigate();
+  const { setNeedRefresh : setAllCampsRefresh} = useContext(CampContext)
 
 const form = useForm({
   initialValues:{
@@ -26,6 +27,8 @@ const form = useForm({
 const newCampaign = async newCamp => {
   try {
     const response = await campWithToken("create",JSON.stringify(newCamp));
+    console.log(response, 'Campaña que se crea en el back')
+    setAllCampsRefresh(true)
     navigate('/profile')
   } 
   catch (error) {
@@ -37,6 +40,7 @@ const newCampaign = async newCamp => {
 
 const handleSubmit = event => {
   newCampaign(event);
+  console.log(event, 'campaña que se crea')
 }
 
   return (

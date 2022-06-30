@@ -6,6 +6,7 @@ import { Pencil, Trash } from 'tabler-icons-react'
 import React from 'react'
 import UpdateCampModal from '../components/UpdateCampModal'
 import { SessionContext } from '../contexts/SessionContext'
+import { CampContext } from '../contexts/CampContext'
 
 
 const CampDetails = () => {
@@ -16,12 +17,14 @@ const CampDetails = () => {
   const [camp, setCamp] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [needRefresh, setNeedRefresh] = useState(false)
+  const { setNeedRefresh : setAllCampsRefresh} = useContext(CampContext)
 
   const fetchCamp = async () => {
     console.log('fetchCamp', campaignId)
     const response = await apiWithToken(`campaigns/${campaignId}`)
     console.log(response, "detalles")
     setCamp(response)
+   
   }
 
   useEffect(() => {
@@ -37,6 +40,7 @@ const CampDetails = () => {
 
   const deleteCamp = async () => {
     await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, { method: 'DELETE' })
+    setAllCampsRefresh(true)
     navigate('/profile')
   }
 
@@ -47,11 +51,11 @@ const CampDetails = () => {
   return (
     <>
       <Paper shadow='xs' p='md'>
-        <Title order={2}>{camp.CampaignName}</Title>
-        <Text>{camp.description}</Text>
-        <Text>{camp.place}</Text>
-        <Text>{camp.fundsFor}</Text>
-        <Text>{camp.totalAmount}</Text>
+        <Title order={2}>Campaign Name:{camp.CampaignName}</Title>
+        <Text>description:{camp.description}</Text>
+        <Text>place:{camp.place}</Text>
+        <Text>funds For:{camp.fundsFor}</Text>
+        <Text>total Amount:{camp.totalAmount}</Text>
         
         <ActionIcon onClick={() => setIsModalOpen(true)}>
           <Pencil size={48} strokeWidth={2} color={'blue'} />

@@ -1,6 +1,9 @@
-import { Button, Input, InputWrapper, Modal, NumberInput } from '@mantine/core'
+import { Button, Input, InputWrapper, Modal, NumberInput, TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import React, { useEffect } from 'react'
+import { CampContext } from '../contexts/CampContext'
+import { useContext } from 'react'
+
 
 
 const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, campaignId }) => {
@@ -14,17 +17,20 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
     },
   })
 
+  const { setNeedRefresh : setAllCampsRefresh} = useContext(CampContext)
+
   useEffect(() => {
     form.setValues({
        CampaignName: camp.CampaignName,
       place: camp.place,
       fundsFor: camp.fundsFor,
-      totalAmount:camp.totalAmount
+      totalAmount:camp.totalAmount,
+      description: camp.description
     })
   }, [camp])
 
   const updateCamp = async newValues => {
-    await fetch(`http://localhost:5005/api/capaigns/${campaignId}`, {
+    await fetch(`http://localhost:5005/api/campaigns/${campaignId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -33,28 +39,30 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
     })
     setNeedRefresh(true)
     setIsModalOpen(false)
+    setAllCampsRefresh(true)
   }
 
   const handleSubmit = values => {
+    console.log('Updated campaigns', values)
     updateCamp(values)
   }
 
   return (
-    <Modal opened={isModalOpen} onClose={() => setIsModalOpen(false)} title='Update beer'>
+    <Modal opened={isModalOpen} onClose={() => setIsModalOpen(false)} title='Update Campaign'>
       <form onSubmit={form.onSubmit(handleSubmit)}>
       <InputWrapper
       
       label="Campaign Name"
       placeholder="Name"
       > 
-      <Input {...form.getInputProps('CampaignName')} />
+      <TextInput {...form.getInputProps('CampaignName')} />
       </InputWrapper>
 
       <InputWrapper
      
           label="Campaign description"
           placeholder="description">
-          <Input {...form.getInputProps('description')} />
+          <TextInput {...form.getInputProps('description')} />
        
           </InputWrapper>
 
@@ -63,7 +71,7 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
           label="Where is the Campaign going to take place"
           placeholder="place"
         >
-           <Input {...form.getInputProps('place')} />
+           <TextInput {...form.getInputProps('place')} />
           </InputWrapper>
 
 <InputWrapper
@@ -71,7 +79,7 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
           label="What are the Funds For"
           placeholder="Funds For"
         >
-           <Input {...form.getInputProps('fundsFor')} />
+           <TextInput {...form.getInputProps('fundsFor')} />
           </InputWrapper>
 
 <InputWrapper

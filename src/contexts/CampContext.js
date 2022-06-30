@@ -33,7 +33,7 @@ const CampContextProvider = ({ children }) => {
   }, [needRefresh])
 
 
-  return <CampContext.Provider value={{ camps }}>{children}</CampContext.Provider>
+  return <CampContext.Provider value={{ camps, setNeedRefresh }}>{children}</CampContext.Provider>
 }
 
 export { CampContext, CampContextProvider }

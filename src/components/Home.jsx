@@ -14,7 +14,7 @@ function Home() {
     return ( 
 <Group>
 <Button variant="outline" color="dark" radius="xl" size="lg">
-<Link to={"/campaigns/create"}>Create a Capaign</Link>
+<Link to={"/campaigns/create"}>Create a Campaign</Link>
     </Button>
 
 {/* <AddCampaign handleNewCampaign={handleNewCampaign} /> */}
