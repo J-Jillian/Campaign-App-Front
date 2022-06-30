@@ -41,7 +41,7 @@ const CampDetails = () => {
   }, [needRefresh])
 
   const deleteCamp = async () => {
-    await fetch(`${BASE_API_URL}/campaigns/${campaignId}`, { 
+    await fetch(`${BASE_API_URL}/api/campaigns/${campaignId}`, { 
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}` 
