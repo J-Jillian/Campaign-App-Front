@@ -3,6 +3,7 @@ import { useForm } from '@mantine/form'
 import React, { useEffect } from 'react'
 import { CampContext } from '../contexts/CampContext'
 import { useContext } from 'react'
+import { SessionContext } from '../contexts/SessionContext'
 
 
 
@@ -18,6 +19,7 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
   })
 
   const { setNeedRefresh : setAllCampsRefresh} = useContext(CampContext)
+  const {token} = useContext(SessionContext)
 
   useEffect(() => {
     form.setValues({
@@ -34,6 +36,7 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(newValues),
     })
