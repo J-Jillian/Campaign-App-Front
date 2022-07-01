@@ -32,15 +32,15 @@ function SampleCards() {
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>Norway Fjord Adventures</Text>
+        <Text weight={500} uppercase >The African Women’s Development Fund</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for ONG
         </Badge>
       </Group>
 
       <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
+      The African Women’s Development Fund (AWDF) is a Pan-African grant making organisation that supports the realisation and fulfillment of African women’s rights through 
+      funding of autonomous women’s organisations on the continent.
       </Text>
 
       <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>
@@ -60,15 +60,16 @@ function SampleCards() {
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>Norway Fjord Adventures</Text>
+        <Text weight={500}>Medical aid for Ukraines</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for Medical aid
         </Badge>
       </Group>
 
       <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
+      Send medications, medical equipment and essential products to our warehouse, and we will quickly deliver your packages to the Armed Forces of Ukraine, Ministry of Health and Ministry 
+      of Reintegration for further distribution to those in need.
+
       </Text>
 
       <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>
@@ -87,15 +88,16 @@ function SampleCards() {
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>Norway Fjord Adventures</Text>
+        <Text weight={500}>Protect the oceans</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for Environment
         </Badge>
       </Group>
 
       <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
+With your help we can stop plastic pollution at the source and protect marine life and habitats for generations to come. This Plastic Free July, join Oceana in our mission to protect the world’s oceans.    
+
+
       </Text>
 
       <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>
@@ -109,20 +111,20 @@ function SampleCards() {
         <Image
           src={larm}
           height={160}
-          alt="Norway"
+         
         />
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>Norway Fjord Adventures</Text>
+        <Text weight={500}>Every child should have good food</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for ONG
         </Badge>
       </Group>
 
       <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
+      Children going hungry isn’t new. But many of the reasons are: pandemics, rising prices and disasters caused by climate change.
+      Our hunger relief  and nutrition programmes help millions every year.
       </Text>
 
       <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>
@@ -141,9 +143,9 @@ function SampleCards() {
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>EXTINCTION MEANS FOREVER</Text>
+        <Text weight={500}>Extinction means forever</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for: Animal
         </Badge>
       </Group>
 
@@ -169,15 +171,14 @@ function SampleCards() {
       </Card.Section>
 
       <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-        <Text weight={500}>Norway Fjord Adventures</Text>
+        <Text weight={500}>Every child has the right to learn</Text>
         <Badge color="pink" variant="light">
-          On Sale
+          Funds for education
         </Badge>
       </Group>
 
       <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
+      Education boosts economic growth and reduces poverty and inequality. It increases individuals’ ability to lead a healthy life, participate in society and restore peace and stability.
       </Text>
 
       <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>

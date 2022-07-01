@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
               styles={{
                 root: {
                   flexDirection: "row",
-                  backgroundColor: "#FAF9FF",
+                  backgroundColor: "#FFCAD2",
                   justifyContent: "flex-end",
                   padding: "0",
                 },
@@ -132,12 +132,12 @@ const Layout = ({ children }) => {
         }
         footer={
           <Footer maxHeight={60} p="md">
-            Application footer
+            By Jillian Ramirez |  Noelia Parada
           </Footer>
         }
         styles={{
           main: {
-            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E1FFA9",
+            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "FAF9FF",
           },
         }}
       >

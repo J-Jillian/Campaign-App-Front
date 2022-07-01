@@ -1,4 +1,4 @@
-import { Card, Text, Image } from '@mantine/core'
+import { Card, Text, Image, Button } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import CampSection from './CampSection'
 import React from "react";
@@ -28,6 +28,12 @@ const Campaign = ({ camp }) => {
         <Text size='s' align='center'>
         {camp.CampaignName}
       </Text>
+      <Text size='s' align='center'>
+        {camp.description}
+      </Text>
+      <Button  variant="outline" color="dark" radius="xl" size="xs"  fullWidth style={{ marginTop: 14 }}>
+        Donate
+      </Button>
     </Card>
   )
 }

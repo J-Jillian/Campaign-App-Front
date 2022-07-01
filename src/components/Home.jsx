@@ -2,8 +2,9 @@ import React from "react";
 import AddCampaign from "./AddCampaign";
 import { Group, Button, Title, Text, Space, Image, Box } from "@mantine/core";
 import { Link } from "react-router-dom";
-import shane from '../img/shane.jpg'
+import world from '../img/world.png'
 import SampleCards from './SampleCards'
+
 
 
 
@@ -16,7 +17,14 @@ function Home() {
 
   return (
     <Box >
-      <div className="homeBox" >
+    
+      <div className="homeBox">
+      <div style={{ width: 350, marginLeft: 'auto', marginRight: 'auto' }}>
+      <Image
+        src={world}
+      />
+    </div>
+    <Space h={20} />
       <Title align="center" >Let's make a the difference together</Title>
         <Space h={20} />
         <Text align="center" >Launch a crowdfunding in 5 min</Text>
@@ -27,12 +35,15 @@ function Home() {
           radius="xl"
           size="lg"
           component={Link}
-          to="/campaigns/create"
+          to="/signup"
         >
-          Create a Campaign
+          Join now
           </Button>
       </div>
       <div >
+      <Space h={80} />  
+      <Title align="center" >Featured Campaigns</Title>
+      <Space h={80} />
       <SampleCards />
       </div>
       

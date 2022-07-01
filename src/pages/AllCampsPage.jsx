@@ -6,6 +6,7 @@ import Campaign from "../components/Campaign";
 import NewCampaign from "../components/AddProject";
 import { CampContext } from "../contexts/CampContext";
 import React from "react";
+import SampleCards from "../components/SampleCards";
 
 const AllCampsPage = () => {
   const { camps } = useContext(CampContext);
@@ -31,6 +32,7 @@ const AllCampsPage = () => {
           <Campaign key={camp._id} camp={camp} />
         ))}
       </Box>
+      <SampleCards />
     </>
   );
 };

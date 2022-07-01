@@ -70,7 +70,7 @@ const LoginPage = () => {
         </InputWrapper>
         <Space h="md" />
 
-        <Button type='submit' variant="outline" radius="xl" size="xl" uppercase>Login</Button>
+        <Button type="submit" variant="outline" color="dark" radius="xl">Login</Button>
       </form>
     </Box>
     </div>
