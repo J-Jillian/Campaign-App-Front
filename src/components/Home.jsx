@@ -15,20 +15,14 @@ function Home() {
   //   }
 
   return (
-    <Box sx={{
-        display: 'grid',
-        gridTemplate: '1fr / 1fr 1fr',
-        gridAutoRows: '1fr',
-        gap: '20px',
-        margin: '20px',
-      }}>
-      <div>
-      <Title>Let's make a the difference together</Title>
+    <Box >
+      <div className="homeBox" >
+      <Title align="center" >Let's make a the difference together</Title>
         <Space h={20} />
-        <Text>Launch a crowdfunding in 5 min</Text>
+        <Text align="center" >Launch a crowdfunding in 5 min</Text>
         <Space h={20} />
         <Button
-          
+          align="center"
           color="lime"
           radius="xl"
           size="lg"
@@ -38,7 +32,10 @@ function Home() {
           Create a Campaign
           </Button>
       </div>
+      <div >
       <SampleCards />
+      </div>
+      
       </Box>
         
         )}

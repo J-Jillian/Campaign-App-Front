@@ -60,3 +60,15 @@
 .homeh1{
   align-self: flex-start; 
 }
+
+.boxCard{
+
+  padding: 150px;
+
+}
+
+.homeBox{
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+}

@@ -131,13 +131,13 @@ const Layout = ({ children }) => {
           </Header>
         }
         footer={
-          <Footer height={60} p="md">
+          <Footer maxHeight={60} p="md">
             Application footer
           </Footer>
         }
         styles={{
           main: {
-            backgroundColor: matchLogin || matchSignup ? "#FFA900" : "#FFCAD2",
+            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E1FFA9",
           },
         }}
       >

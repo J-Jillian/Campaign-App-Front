@@ -32,12 +32,14 @@ if(!userCampaing){
            
 
     <Box
+          mx="auto"
           sx={{
-            display: 'grid',
-            gridTemplate: '1fr / 1fr 1fr',
-            gridAutoRows: '1fr',
-            gap: '20px',
-            margin: '20px',
+            display: "grid",
+            gridTemplate: "1fr / 1fr 1fr",
+            gridAutoRows: "1fr",
+            gap: "20px",
+            margin: "20px",
+            maxWidth: 600,
           }}
         >
           {userCampaing && userCampaing.map(camp => (
