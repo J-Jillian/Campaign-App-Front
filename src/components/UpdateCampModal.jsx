@@ -1,4 +1,4 @@
-import { Button, Input, InputWrapper, Modal, NumberInput, TextInput } from '@mantine/core'
+import { Space, Button, Input, InputWrapper, Modal, NumberInput, TextInput, Title } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import React, { useEffect } from 'react'
 import { CampContext } from '../contexts/CampContext'
@@ -96,8 +96,8 @@ const UpdateCampModal = ({ isModalOpen, setIsModalOpen, camp, setNeedRefresh, ca
 
 
 
-       
-        <Button type='submit'>Update</Button>
+<Space h="md" />
+        <Button variant="outline" color="dark" radius="xl"  type='submit'>Update</Button>
       </form>
     </Modal>
   )

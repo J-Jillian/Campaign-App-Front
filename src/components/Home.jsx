@@ -1,28 +1,49 @@
 import React from "react";
-import AddCampaign from './AddCampaign';
-import { Group, Button } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import AddCampaign from "./AddCampaign";
+import { Group, Button, Title, Text, Space, Image, Box } from "@mantine/core";
+import { Link } from "react-router-dom";
+import shane from '../img/shane.jpg'
+import SampleCards from './SampleCards'
+
+
+
 function Home() {
+  // const [camps, setCampaign] = useState(campsJSON);
 
-    // const [camps, setCampaign] = useState(campsJSON);
+  // function handleNewCampaign(newCampaign) {
+  //     setCampaign([...camps, newCampaign]);
+  //   }
 
-    // function handleNewCampaign(newCampaign) {
-    //     setCampaign([...camps, newCampaign]);
-    //   }
-
-
-    return ( 
-<Group>
-<Button variant="outline" color="dark" radius="xl" size="lg">
-<Link to={"/campaigns/create"}>Create a Campaign</Link>
-    </Button>
-
-{/* <AddCampaign handleNewCampaign={handleNewCampaign} /> */}
-    </Group>
-
-
+  return (
+    <Box sx={{
+        display: 'grid',
+        gridTemplate: '1fr / 1fr 1fr',
+        gridAutoRows: '1fr',
+        gap: '20px',
+        margin: '20px',
+      }}>
+      <div>
+      <Title>Let's make a the difference together</Title>
+        <Space h={20} />
+        <Text>Launch a crowdfunding in 5 min</Text>
+        <Space h={20} />
+        <Button
+          
+          color="lime"
+          radius="xl"
+          size="lg"
+          component={Link}
+          to="/campaigns/create"
+        >
+          Create a Campaign
+          </Button>
+      </div>
+      <SampleCards />
+      </Box>
         
-    );
-}
+        )}
 
+   
+    
+ 
 export default Home;

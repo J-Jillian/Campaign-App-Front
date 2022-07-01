@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Campaign from './components/Campaign';
 import ErrorPage from './components/ErrorPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LogingPage';
@@ -43,8 +42,7 @@ function App() {
 <Route path='/profile' element={
                 <PrivateRoute>
                   <ProfilePage />
-
-                </PrivateRoute>
+                  </PrivateRoute>
               }
             />
   

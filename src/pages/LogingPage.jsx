@@ -1,4 +1,4 @@
-import {Image, Text, Space, Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
+import {Center, Image, Text, Space, Box, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
 import { useForm } from '@mantine/hooks'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -42,12 +42,14 @@ const LoginPage = () => {
 
   
   return (
+    <div className='setUpBox'>
     <Box sx={{ maxWidth: 340 }} mx="auto">
-       <Image
-        
+      <div style={{ width: 120, marginLeft: 'auto', marginRight: 'auto' }}>
+      <Image
         src={handlogin}
       />
-      <Title>Hello</Title>
+    </div>
+    <Title>Hello</Title>
       <Space h="md" />
       <Space h="md" />
       <Text size="xs"  >Welcome to Funrasing!</Text>
@@ -71,6 +73,9 @@ const LoginPage = () => {
         <Button type='submit' variant="outline" radius="xl" size="xl" uppercase>Login</Button>
       </form>
     </Box>
+    </div>
+   
+    
   )
 }
 

@@ -5,17 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { SessionContextProvider } from './contexts/SessionContext'
+import { MantineProvider } from '@mantine/core';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <MantineProvider theme={{ fontFamily: 'Mulish light', headings: {
+          fontFamily: 'NewKansas heavy', color: '#1F1F37'
+    
+      }}} withGlobalStyles withNormalizeCSS> 
   <SessionContextProvider>
     <BrowserRouter>
 
     <App />
     </BrowserRouter>
   </SessionContextProvider>
-  
+  </MantineProvider>
   </React.StrictMode>
 );
 

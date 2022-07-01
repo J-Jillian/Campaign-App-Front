@@ -1,9 +1,10 @@
-import { Space, Box, Text, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
+import {Image, Space, Box, Text, Button, Input, InputWrapper, PasswordInput, Title } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useNavigate } from 'react-router-dom'
 import { signup } from '../utils/helper'
 import React from "react";
 import { At } from 'tabler-icons-react';
+import handsignup from '../img/handsignup.png'
 
 const SignupPage = () => {
   const navigate = useNavigate()
@@ -35,8 +36,14 @@ const SignupPage = () => {
   }
 
   return (
-    <body className='bg-yellow'>
-    <Box sx={{ maxWidth: 340 }} mx="auto">
+    <div className='setUpBox'>
+    <Box sx={{maxWidth: 340 }} mx="auto">
+      
+    <div style={{ width: 120, marginLeft: 'auto', marginRight: 'auto' }}>
+      <Image
+        src={handsignup}
+      />
+    </div>
       <Title>Sign up</Title>
       <Space h="md" />
       <Text size="xs"  >Launch a crowdfunding in 5 minutes or donate generously.</Text>
@@ -59,7 +66,8 @@ const SignupPage = () => {
         <Button type='submit' variant="outline" radius="xl" size="xl" uppercase>Register</Button>
       </form>
     </Box>
-    </body>
+    </div>
+    
   )
 }
 

@@ -1,5 +1,26 @@
+@font-face {
+  font-family: 'Mulish light' ;
+  src: url('../src/Fonts/Mulish-Light.ttf');
+}
+
+@font-face {
+  font-family: 'NewKansas heavy';
+  src: url('../src/Fonts/NewKansas-Heavy.ttf');
+}
+
+
+.setUpBox{
+  margin-top: 80px;
+}
+
+.EditBox{
+  text-align: left;
+}
+
+
 .App {
   text-align: center;
+  font-family: 'Mulish light';
 }
 
 .App-logo {
@@ -21,18 +42,21 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Mulish light';
 }
 
-.App-link {
-  color: #61dafb;
+.Bg-home{
+  background-color: aqua;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homeHeader{
+  display: flex;
+  flex-wrap:wrap;
+  padding: 10em;
+}
+
+.homeh1{
+  align-self: flex-start; 
 }

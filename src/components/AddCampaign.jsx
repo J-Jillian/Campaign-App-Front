@@ -45,8 +45,9 @@ const handleSubmit = event => {
 
   return (
     <div>
-    <Box>
-      <Title>Create Your Campaign </Title>
+    <Box sx={{ maxWidth: 340 }} mx="auto">
+      <Title>Let's start fundraising</Title>
+      <Space h="md" />
     <form onSubmit={form.onSubmit(handleSubmit)}>
 
 
@@ -96,7 +97,7 @@ const handleSubmit = event => {
 </InputWrapper>
 
 
-
+<Space h="md" />
 <Button type="submit" variant="outline" color="dark" radius="xl" size="lg">
       Create a campaign
     </Button>

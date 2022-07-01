@@ -1,5 +1,5 @@
 import React from "react";
-import { Group, Button } from '@mantine/core';
+import {Button, Title } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { SessionContext } from '../contexts/SessionContext'
 import { useState, useContext, useEffect } from "react";
@@ -28,10 +28,8 @@ if(!userCampaing){
 
     return (  
         <div>
-            <h1>Profile Page</h1>
-<Button variant="outline" color="dark" radius="xl" size="lg">
-<Link to={"/campaigns/create"}>Create a Capaign</Link>
-    </Button>
+          <Title>You're Campaigns</Title>
+           
 
     <Box
           sx={{

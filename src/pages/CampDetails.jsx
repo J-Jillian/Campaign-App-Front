@@ -58,11 +58,14 @@ const CampDetails = () => {
   return (
     <>
       <Paper shadow='xs' p='md'>
-        <Title order={2}>Campaign Name:{camp.CampaignName}</Title>
-        <Text>description:{camp.description}</Text>
-        <Text>place:{camp.place}</Text>
-        <Text>funds For:{camp.fundsFor}</Text>
-        <Text>total Amount:{camp.totalAmount}</Text>
+        <div className='EditBox' >
+        <Title order={2}>{camp.CampaignName}</Title>
+        <Text><strong>DESCRIPTION :</strong>{camp.description}</Text>
+        <Text><strong>PLACE :</strong> {camp.place}</Text>
+        <Text><strong>FUNDS FOR :</strong> {camp.fundsFor}</Text>
+        <Text><strong>GOAL :</strong>{camp.totalAmount}</Text>
+        </div>
+        
         
         <ActionIcon onClick={() => setIsModalOpen(true)}>
           <Pencil size={48} strokeWidth={2} color={'blue'} />
