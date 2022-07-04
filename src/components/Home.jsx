@@ -31,9 +31,7 @@ function Home() {
         <Space h={20} />
         <Button
           align="center"
-          color="lime"
-          radius="xl"
-          size="lg"
+          variant="outline" color="dark" radius="xl" size="lg"
           component={Link}
           to="/signup"
         >

@@ -55,6 +55,7 @@ const Layout = ({ children }) => {
       <AppShell
         fixed
         navbarOffsetBreakpoint="sm"
+
         header={
           <Header
             height={50}
@@ -100,7 +101,7 @@ const Layout = ({ children }) => {
                     Create a Capaign
                   </Button>
                   
-                  <Anchor>Logout</Anchor>
+                  <Anchor onClick={logout} >Logout</Anchor>
                   {/* <ActionIcon onClick={logout}>
                     <Logout size={48} strokeWidth={2} color={"black"} />
                   </ActionIcon> */}
@@ -117,6 +118,7 @@ const Layout = ({ children }) => {
                 backgroundColor: "#FFCAD2",
                 justifyContent: "flex-end",
                 padding: "0",
+                color: "#1F1F37"
               },
             }}
             className={classes.navbar}
@@ -222,7 +224,7 @@ const Layout = ({ children }) => {
         }
         styles={{
           main: {
-            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#DFD9EA",
+            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E67D97",
             color:"#FFCAD2"
           },
         }}
