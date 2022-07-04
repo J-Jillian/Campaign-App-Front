@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <MantineProvider theme={{ fontFamily: 'Mulish light', headings: {
-          fontFamily: 'NewKansas heavy', color: '#1F1F37'
+          fontFamily: 'Magilio', color: '#1F1F37', backgroundColor:'#FAF9FF'
     
       }}} withGlobalStyles withNormalizeCSS> 
   <SessionContextProvider>

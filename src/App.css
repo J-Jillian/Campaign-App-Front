@@ -8,6 +8,13 @@
   src: url('../src/Fonts/NewKansas-Heavy.ttf');
 }
 
+@font-face {
+  font-family: 'Magilio';
+  src: url('../src/Fonts/MagilioRegular-Yzv2O.ttf');
+}
+
+
+
 
 .setUpBox{
   margin-top: 80px;

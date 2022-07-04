@@ -25,9 +25,9 @@ function Home() {
       />
     </div>
     <Space h={20} />
-      <Title align="center" >Let's make a the difference together</Title>
+      <Title align="center" >Let's make the difference together</Title>
         <Space h={20} />
-        <Text align="center" >Launch a crowdfunding in 5 min</Text>
+        <Text align="center" >Launch a crowdfunding in 5 min.</Text>
         <Space h={20} />
         <Button
           align="center"
