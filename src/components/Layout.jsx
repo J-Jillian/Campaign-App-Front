@@ -56,18 +56,19 @@ const Layout = ({ children }) => {
         fixed
         navbarOffsetBreakpoint="sm"
         header={
-          <Header height={50}
-          styles={{
-            root: {
-              // flexDirection: "row",
-              backgroundColor: "#FFCAD2",
-              justifyContent: "flex-end",
-              padding: "0",
-            },
-          }}>
+          <Header
+            height={50}
+            styles={{
+              root: {
+                // flexDirection: "row",
+                backgroundColor: "#FFCAD2",
+                justifyContent: "flex-end",
+                padding: "0",
+              },
+            }}
+          >
             <MediaQuery largerThan="sm" styles={{ display: "none" }}>
               <Burger
-                
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
                 size="sm"
@@ -75,29 +76,36 @@ const Layout = ({ children }) => {
               />
             </MediaQuery>
             <div className={classes.links}>
-            {!isAuthenticated ? (
-              <>
-              <Anchor>Signup</Anchor>
-              <Anchor>Login</Anchor>
-              
-              </>
+              {!isAuthenticated ? (
+                <>
+                  {/* <Image height={50} width={120} src={logoMakeTD} /> */}
+                  <Anchor>Signup</Anchor>
+                  <Anchor>Login</Anchor>
+                </>
               ) : (
                 <>
-              <Anchor>Home</Anchor>
-              <Anchor>Campaigns</Anchor>
-              <Button sx={{ maxWidth: 340 }} mx="auto"
-                  size="xs" variant="outline" color="dark" radius="xl" component={Link}
-                  to="/campaigns/create"
-                >
-                  Create a Capaign
-                </Button>
-                <Space w={50} />
-
-                <ActionIcon onClick={logout}>
-                  <Logout size={48} strokeWidth={2} color={"black"} />
-                </ActionIcon>
+                  {/* <Image height={50} width={120} src={logoMakeTD} /> */}
+                  <Anchor>Home</Anchor>
+                  <Anchor>Campaigns</Anchor>
+                  <Button
+                    sx={{ maxWidth: 340 }}
+                    mx="auto"
+                    size="xs"
+                    variant="outline"
+                    color="dark"
+                    radius="xl"
+                    component={Link}
+                    to="/campaigns/create"
+                  >
+                    Create a Capaign
+                  </Button>
+                  
+                  <Anchor>Logout</Anchor>
+                  {/* <ActionIcon onClick={logout}>
+                    <Logout size={48} strokeWidth={2} color={"black"} />
+                  </ActionIcon> */}
                 </>
-            )}
+              )}
             </div>
           </Header>
         }
@@ -111,14 +119,13 @@ const Layout = ({ children }) => {
                 padding: "0",
               },
             }}
-            
             className={classes.navbar}
             width={{ base: "100%", sm: 0 }}
             hidden={!opened}
           >
             {!isAuthenticated ? (
               <>
-                <Image height={50} width={120} src={logoMakeTD} />
+                {/* <Image height={50} width={120} src={logoMakeTD} /> */}
                 <Space w={600} />
                 <Anchor
                   component={NavLink}
@@ -142,7 +149,7 @@ const Layout = ({ children }) => {
               </>
             ) : (
               <>
-                <Image height={50} width={120} src={logoMakeTD} />
+                {/* <Image height={50} width={120} src={logoMakeTD} /> */}
                 <Space w={680} />
 
                 <Anchor
@@ -177,7 +184,8 @@ const Layout = ({ children }) => {
                 <Space w={50} />
 
                 <Button
-                sx={{ maxWidth: 340 }} mx="auto"
+                  sx={{ maxWidth: 340 }}
+                  mx="auto"
                   size="xs"
                   variant="outline"
                   color="dark"
@@ -188,22 +196,34 @@ const Layout = ({ children }) => {
                   Create a Capaign
                 </Button>
                 <Space w={50} />
+                <Anchor onClick={logout} >Logout</Anchor>
 
-                <ActionIcon onClick={logout}>
+                {/* <ActionIcon onClick={logout}>
                   <Logout size={48} strokeWidth={2} color={"black"} />
-                </ActionIcon>
+                </ActionIcon> */}
               </>
             )}
           </Navbar>
         }
         footer={
-          <Footer maxHeight={60} p="md">
+          <Footer maxHeight={60} p="md" 
+          styles={{
+            root: {
+              // flexDirection: "row",
+              backgroundColor: "#FFCAD2",
+              justifyContent: "flex-end",
+              padding: "0",
+              color: "#1F1F37"
+            },
+          }}
+          >
             By Jillian Ramirez | Noelia Parada
           </Footer>
         }
         styles={{
           main: {
             backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#DFD9EA",
+            color:"#FFCAD2"
           },
         }}
       >
