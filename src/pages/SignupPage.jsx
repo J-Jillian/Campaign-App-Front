@@ -44,6 +44,8 @@ const SignupPage = () => {
     createUser(values);
   };
 
+  
+
   return (
     <div className="setUpBox">
       <Box sx={{ maxWidth: 340 }} mx="auto">
@@ -52,7 +54,7 @@ const SignupPage = () => {
         </div>
         <Title>Join us</Title>
         <Space h="md" />
-        <Text size="xs">
+        <Text size="lg">
           Launch a crowdfunding in 5 minutes or donate generously.
         </Text>
         <Space h="md" />

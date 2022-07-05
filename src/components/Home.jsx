@@ -20,15 +20,13 @@ function Home() {
     
       <div className="homeBox">
       <div style={{ width: 350, marginLeft: 'auto', marginRight: 'auto' }}>
-      <Image
-        src={world}
-      />
+      
     </div>
     <Space h={20} />
-      <Title align="center" >Let's make the difference together</Title>
+      <Title order={1} align="center" >Let's make the difference together</Title>
         <Space h={20} />
-        <Text align="center" >Launch a crowdfunding in 5 min.</Text>
-        <Space h={20} />
+        <Text size="lg" align="center" >Launch a crowdfunding in 5 minutes or donate generously.</Text>
+        <Space h={40} />
         <Button
           align="center"
           variant="outline" color="dark" radius="xl" size="lg"

@@ -11,8 +11,13 @@ import { MantineProvider } from '@mantine/core';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <MantineProvider theme={{ fontFamily: 'Mulish light', headings: {
-          fontFamily: 'Magilio', color: '#1F1F37', backgroundColor:'#FAF9FF'
+      <MantineProvider theme={{  fontFamily: 'Mulish light', 
+      headings: {
+          fontFamily: 'Magilio', 
+          color: '#1F1F37', 
+          sizes: {
+            h1: { fontSize: 50 },
+          },
     
       }}} withGlobalStyles withNormalizeCSS> 
   <SessionContextProvider>

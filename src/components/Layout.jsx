@@ -51,13 +51,13 @@ const Layout = ({ children }) => {
   const { classes } = useStyles();
 
   return (
-    <div>
+    <div className="nav">
       <AppShell
         fixed
         navbarOffsetBreakpoint="sm"
         header={
           <Header
-            height={40}
+            height={50}
             styles={{
               root: {
                 // flexDirection: "row",
@@ -86,6 +86,8 @@ const Layout = ({ children }) => {
                         color: "#1F1F37",
                       },
                     }}
+                    component={NavLink}
+                  to="/signup"
                   >
                     Signup
                   </Anchor>
@@ -96,6 +98,8 @@ const Layout = ({ children }) => {
                         marginLeft:50,
                       },
                     }}
+                    component={NavLink}
+                  to="/login"
                   >
                     Login
                   </Anchor>
@@ -103,6 +107,7 @@ const Layout = ({ children }) => {
               ) : (
                 <>
                   {/* <Image height={50} width={120} src={logoMakeTD} /> */}
+                  <div className="nav">
                   <Anchor
                     styles={{
                       root: {
@@ -110,6 +115,8 @@ const Layout = ({ children }) => {
                         marginLeft:50,
                       },
                     }}
+                    component={NavLink}
+                  to="/"
                   >
                     Home
                   </Anchor>
@@ -122,8 +129,23 @@ const Layout = ({ children }) => {
                         
                       },
                     }}
+                    component={NavLink}
+                  to="/campaigns"
                   >
                     Campaigns
+                  </Anchor>
+                  <Anchor
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginRight:50
+                        
+                      },
+                    }}
+                    component={NavLink}
+                  to="/profile"
+                  >
+                    Profile
                   </Anchor>
                   <Button
                     sx={{ maxWidth: 340 }}
@@ -149,10 +171,12 @@ const Layout = ({ children }) => {
                   >
                     Logout
                   </Anchor>
+                  </div>
                   {/* <ActionIcon onClick={logout}>
                     <Logout size={48} strokeWidth={2} color={"black"} />
                   </ActionIcon> */}
                 </>
+                
               )}
             </div>
           </Header>
@@ -313,7 +337,7 @@ const Layout = ({ children }) => {
         styles={{
           main: {
             backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E67D97",
-            color: "#FFCAD2",
+            color: "#1F1F37",
           },
         }}
       >

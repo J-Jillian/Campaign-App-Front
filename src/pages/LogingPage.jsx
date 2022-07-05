@@ -49,10 +49,13 @@ const LoginPage = () => {
         src={handlogin}
       />
     </div>
-    <Title>Hello</Title>
+    <Title variant="color"
+    color="#1F1F37"
+    >Hello</Title>
       <Space h="md" />
       <Space h="md" />
-      <Text size="xs"  >Welcome to Funrasing!</Text>
+      <Text size="lg"  >Welcome to Make The Difference!</Text>
+      <Space h="md" />
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <InputWrapper
           required

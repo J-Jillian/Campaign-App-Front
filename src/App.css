@@ -78,7 +78,14 @@
 
 .homeBox{
   /* background-color: #E1FFA9; */
-  padding: 80px;
-margin: 0px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin: 0px;
+  display: row;
+  justify-items: center;
 
+}
+
+.nav{
+  margin-top: 10px;
 }
