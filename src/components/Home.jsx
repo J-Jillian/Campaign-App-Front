@@ -30,6 +30,8 @@ function Home() {
     <Space h={20} />
       <Title order={1} align="center" >Let's make the difference together</Title>
       <Space h={40} />
+      <Text size="lg" align="center" >Launch a crowdfunding in 5 minutes or donate generously.</Text>
+        <Space h={40} />
         <Button
           align="center"
           variant="outline" color="dark" radius="xl" size="lg"
@@ -38,9 +40,7 @@ function Home() {
         >
           Join Now
           </Button>
-        <Space h={40} />
-        <Text size="lg" align="center" >Launch a crowdfunding in 5 minutes or donate generously.</Text>
-        <Space h={210} />
+        <Space h={120} />
 <Title order={2} align="center">Raising funds on GoFundMe only takes a few minutes</Title>
 
         
