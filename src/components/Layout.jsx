@@ -67,6 +67,7 @@ const Layout = ({ children }) => {
               },
             }}
           >
+            <div className="nav">
             <MediaQuery largerThan="sm" styles={{ display: "none" }}>
               <Burger
                 color="#E67D97"
@@ -76,6 +77,7 @@ const Layout = ({ children }) => {
                 mr="xl"
               />
             </MediaQuery>
+            </div>
             <div className={classes.links}>
               {!isAuthenticated ? (
                 <>
