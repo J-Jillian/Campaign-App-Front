@@ -55,24 +55,24 @@ const Layout = ({ children }) => {
       <AppShell
         fixed
         navbarOffsetBreakpoint="sm"
-
         header={
           <Header
-            height={50}
+            height={40}
             styles={{
               root: {
                 // flexDirection: "row",
                 backgroundColor: "#FFCAD2",
                 justifyContent: "flex-end",
-                padding: "0",
+                borderBottom:"none",
               },
             }}
           >
             <MediaQuery largerThan="sm" styles={{ display: "none" }}>
               <Burger
+                color="#E67D97"
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
-                size="sm"
+                size={30}
                 mr="xl"
               />
             </MediaQuery>
@@ -80,14 +80,51 @@ const Layout = ({ children }) => {
               {!isAuthenticated ? (
                 <>
                   {/* <Image height={50} width={120} src={logoMakeTD} /> */}
-                  <Anchor>Signup</Anchor>
-                  <Anchor>Login</Anchor>
+                  <Anchor
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                      },
+                    }}
+                  >
+                    Signup
+                  </Anchor>
+                  <Anchor
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginLeft:50,
+                      },
+                    }}
+                  >
+                    Login
+                  </Anchor>
                 </>
               ) : (
                 <>
                   {/* <Image height={50} width={120} src={logoMakeTD} /> */}
-                  <Anchor>Home</Anchor>
-                  <Anchor>Campaigns</Anchor>
+                  <Anchor
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginLeft:50,
+                      },
+                    }}
+                  >
+                    Home
+                  </Anchor>
+                  <Anchor
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginLeft:50,
+                        marginRight:50
+                        
+                      },
+                    }}
+                  >
+                    Campaigns
+                  </Anchor>
                   <Button
                     sx={{ maxWidth: 340 }}
                     mx="auto"
@@ -100,8 +137,18 @@ const Layout = ({ children }) => {
                   >
                     Create a Capaign
                   </Button>
-                  
-                  <Anchor onClick={logout} >Logout</Anchor>
+
+                  <Anchor
+                    onClick={logout}
+                    styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginLeft:50
+                      },
+                    }}
+                  >
+                    Logout
+                  </Anchor>
                   {/* <ActionIcon onClick={logout}>
                     <Logout size={48} strokeWidth={2} color={"black"} />
                   </ActionIcon> */}
@@ -112,13 +159,16 @@ const Layout = ({ children }) => {
         }
         navbar={
           <Navbar
+          
             styles={{
               root: {
                 // flexDirection: "row",
                 backgroundColor: "#FFCAD2",
                 justifyContent: "flex-end",
                 padding: "0",
-                color: "#1F1F37"
+                color: "#1F1F37",
+                
+                
               },
             }}
             className={classes.navbar}
@@ -130,6 +180,12 @@ const Layout = ({ children }) => {
                 {/* <Image height={50} width={120} src={logoMakeTD} /> */}
                 <Space w={600} />
                 <Anchor
+                styles={{
+                  root: {
+                    color: "#1F1F37",
+                    marginTop:10
+                  },
+                }}
                   component={NavLink}
                   to="/signup"
                   style={({ isActive }) =>
@@ -139,7 +195,12 @@ const Layout = ({ children }) => {
                   Signup
                 </Anchor>
                 <Space w={50} />
-                <Anchor
+                <Anchor styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginTop:10
+                      },
+                    }}
                   component={NavLink}
                   to="/login"
                   style={({ isActive }) =>
@@ -155,6 +216,12 @@ const Layout = ({ children }) => {
                 <Space w={680} />
 
                 <Anchor
+                styles={{
+                  root: {
+                    color: "#1F1F37",
+                    marginTop:10
+                  },
+                }}
                   component={NavLink}
                   to="/"
                   style={({ isActive }) =>
@@ -165,6 +232,12 @@ const Layout = ({ children }) => {
                 </Anchor>
                 <Space w={50} />
                 <Anchor
+                styles={{
+                  root: {
+                    color: "#1F1F37",
+                    marginTop:10
+                  },
+                }}
                   component={NavLink}
                   to="/campaigns"
                   style={({ isActive }) =>
@@ -175,6 +248,13 @@ const Layout = ({ children }) => {
                 </Anchor>
                 <Space w={50} />
                 <Anchor
+                styles={{
+                  root: {
+                    color: "#1F1F37",
+                    marginTop:10,
+                    marginBottom:10
+                  },
+                }}
                   component={NavLink}
                   to="/profile"
                   style={({ isActive }) =>
@@ -198,7 +278,13 @@ const Layout = ({ children }) => {
                   Create a Capaign
                 </Button>
                 <Space w={50} />
-                <Anchor onClick={logout} >Logout</Anchor>
+                <Anchor styles={{
+                      root: {
+                        color: "#1F1F37",
+                        marginTop:10
+                      },
+                    }}
+                onClick={logout}>Logout</Anchor>
 
                 {/* <ActionIcon onClick={logout}>
                   <Logout size={48} strokeWidth={2} color={"black"} />
@@ -208,16 +294,18 @@ const Layout = ({ children }) => {
           </Navbar>
         }
         footer={
-          <Footer maxHeight={60} p="md" 
-          styles={{
-            root: {
-              // flexDirection: "row",
-              backgroundColor: "#FFCAD2",
-              justifyContent: "flex-end",
-              padding: "0",
-              color: "#1F1F37"
-            },
-          }}
+          <Footer
+            maxHeight={60}
+            p="md"
+            styles={{
+              root: {
+                // flexDirection: "row",
+                backgroundColor: "#FFCAD2",
+                justifyContent: "flex-end",
+                padding: "0",
+                color: "#1F1F37",
+              },
+            }}
           >
             By Jillian Ramirez | Noelia Parada
           </Footer>
@@ -225,7 +313,7 @@ const Layout = ({ children }) => {
         styles={{
           main: {
             backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E67D97",
-            color:"#FFCAD2"
+            color: "#FFCAD2",
           },
         }}
       >
