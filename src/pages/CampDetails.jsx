@@ -1,4 +1,4 @@
-import { ActionIcon, Paper, Text, Title } from '@mantine/core'
+import { ActionIcon, Paper, Text, Title, Space } from '@mantine/core'
 import { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
@@ -63,16 +63,21 @@ const CampDetails = () => {
         <Text><strong>DESCRIPTION :</strong>{camp.description}</Text>
         <Text><strong>PLACE :</strong> {camp.place}</Text>
         <Text><strong>FUNDS FOR :</strong> {camp.fundsFor}</Text>
-        <Text><strong>GOAL :</strong>{camp.totalAmount}</Text>
+        <Text><strong>GOAL :</strong>{`$${camp.totalAmount}`}</Text>
         </div>
-        
-        
-        <ActionIcon onClick={() => setIsModalOpen(true)}>
-          <Pencil size={48} strokeWidth={2} color={'blue'} />
+
+        <Space h={20} />
+        <div className='actionIcons'>
+          <ActionIcon onClick={() => setIsModalOpen(true)}>
+          <Pencil size={48} strokeWidth={1} color={'#C1B4EF'} />
         </ActionIcon>
+
+        <Space w={20} />
         <ActionIcon onClick={handleDelete}>
-          <Trash size={48} strokeWidth={2} color={'#bf4058'} />
-        </ActionIcon>
+          <Trash size={48} strokeWidth={1} color={'#E67D97'} />
+        </ActionIcon></div>
+        
+        
       </Paper>
       <UpdateCampModal
         isModalOpen={isModalOpen}

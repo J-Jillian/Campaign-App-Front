@@ -1,9 +1,11 @@
-import { Card, Text, Image, Button } from '@mantine/core'
+import { Card, Text, Image, Button, Badge, Group,  useMantineTheme  } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import CampSection from './CampSection'
 import React from "react";
 
 const Campaign = ({ camp }) => {
+  const theme = useMantineTheme();
+  const secondaryColor = theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7];
   return (
     <Card
       shadow='sm'
@@ -23,11 +25,18 @@ const Campaign = ({ camp }) => {
           alt="Norway"
         />
       </Card.Section>
-      {/* <CampSection name={camp.campaignName} /> */}
-
-        <Text size='s' align='center'>
+      
+      <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
+      <Text size='s' align='center'>
         {camp.CampaignName}
       </Text>
+      <Badge color="pink" variant="light">
+      {camp.fundsFor}
+        </Badge>
+      </Group>
+
+       
+
       <Text size='s' align='center'>
         {camp.description}
       </Text>

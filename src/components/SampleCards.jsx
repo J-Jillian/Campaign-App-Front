@@ -27,7 +27,7 @@ function SampleCards() {
         <Image
           src={annie}
           height={160}
-          alt="Norway"
+          
         />
       </Card.Section>
 

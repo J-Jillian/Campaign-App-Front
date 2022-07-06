@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Title } from '@mantine/core';
+import {Button, Title, Space } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { SessionContext } from '../contexts/SessionContext'
 import { useState, useContext, useEffect } from "react";
@@ -28,6 +28,7 @@ if(!userCampaing){
 
     return (  
         <div>
+          <Space h={100} />
           <Title>You're Campaigns</Title>
            
 
