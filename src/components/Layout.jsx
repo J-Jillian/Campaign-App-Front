@@ -326,10 +326,11 @@ const Layout = ({ children }) => {
             styles={{
               root: {
                 // flexDirection: "row",
-                backgroundColor: "#FFCAD2",
+                backgroundColor: "#E67D97",
                 justifyContent: "flex-end",
                 padding: "0",
                 color: "#1F1F37",
+                borderTop:"none"
               },
             }}
           >
@@ -338,7 +339,7 @@ const Layout = ({ children }) => {
         }
         styles={{
           main: {
-            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#E67D97",
+            backgroundColor: matchLogin || matchSignup ? "#FFCAD2" : "#FFCAD2",
             color: "#1F1F37",
           },
         }}
