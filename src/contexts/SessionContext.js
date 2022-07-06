@@ -1,8 +1,10 @@
 import { createContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { apiBase, checkToken, campaignBase } from '../utils/helper'
 import React from "react";
 
 const SessionContext = createContext()
+
 
 const SessionContextProvider = ({ children }) => {
   const [token, setToken] = useState()
@@ -10,18 +12,23 @@ const SessionContextProvider = ({ children }) => {
 
   const apiWithToken = apiBase(token)
   const campWithToken = campaignBase(token)
+  
 
   const authenticateUser = responseToken => {
     setToken(responseToken)
     localStorage.setItem('authToken', responseToken)
     setIsAuthenticated(true)
   }
-
+  
   const logout = () => {
     setToken()
     localStorage.removeItem('authToken')
     setIsAuthenticated(false)
+   
   }
+
+  
+
 
   const verifyAuth = async () => {
     try {

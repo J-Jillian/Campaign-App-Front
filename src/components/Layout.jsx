@@ -63,20 +63,20 @@ const Layout = ({ children }) => {
                 // flexDirection: "row",
                 backgroundColor: "#FFCAD2",
                 justifyContent: "flex-end",
-                borderBottom:"none",
+                borderBottom: "none",
               },
             }}
           >
             <div className="nav">
-            <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-              <Burger
-                color="#E67D97"
-                opened={opened}
-                onClick={() => setOpened((o) => !o)}
-                size={30}
-                mr="xl"
-              />
-            </MediaQuery>
+              <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+                <Burger
+                  color="#E67D97"
+                  opened={opened}
+                  onClick={() => setOpened((o) => !o)}
+                  size={30}
+                  mr="xl"
+                />
+              </MediaQuery>
             </div>
             <div className={classes.links}>
               {!isAuthenticated ? (
@@ -89,7 +89,7 @@ const Layout = ({ children }) => {
                       },
                     }}
                     component={NavLink}
-                  to="/signup"
+                    to="/signup"
                   >
                     Signup
                   </Anchor>
@@ -97,11 +97,11 @@ const Layout = ({ children }) => {
                     styles={{
                       root: {
                         color: "#1F1F37",
-                        marginLeft:50,
+                        marginLeft: 50,
                       },
                     }}
                     component={NavLink}
-                  to="/login"
+                    to="/login"
                   >
                     Login
                   </Anchor>
@@ -110,82 +110,80 @@ const Layout = ({ children }) => {
                 <>
                   {/* <Image height={50} width={120} src={logoMakeTD} /> */}
                   <div className="nav">
-                  <Anchor
-                    styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginLeft:50,
-                      },
-                    }}
-                    component={NavLink}
-                  to="/"
-                  >
-                    Home
-                  </Anchor>
-                  <Anchor
-                    styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginLeft:50,
-                        marginRight:50
-                        
-                      },
-                    }}
-                    component={NavLink}
-                  to="/campaigns"
-                  >
-                    Campaigns
-                  </Anchor>
-                  <Anchor
-                    styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginRight:50
-                        
-                      },
-                    }}
-                    component={NavLink}
-                  to="/profile"
-                  >
-                    Profile
-                  </Anchor>
-                  <Button
-                    sx={{ maxWidth: 340 }}
-                    mx="auto"
-                    size="xs"
-                    variant="outline"
-                    color="dark"
-                    radius="xl"
-                    component={Link}
-                    to="/campaigns/create"
-                  >
-                    Create a Capaign
-                  </Button>
+                    <Anchor
+                      styles={{
+                        root: {
+                          color: "#1F1F37",
+                          marginLeft: 50,
+                        },
+                      }}
+                      component={NavLink}
+                      to="/"
+                    >
+                      Home
+                    </Anchor>
+                    <Anchor
+                      styles={{
+                        root: {
+                          color: "#1F1F37",
+                          marginLeft: 50,
+                          marginRight: 50,
+                        },
+                      }}
+                      component={NavLink}
+                      to="/campaigns"
+                    >
+                      Campaigns
+                    </Anchor>
+                    <Anchor
+                      styles={{
+                        root: {
+                          color: "#1F1F37",
+                          marginRight: 50,
+                        },
+                      }}
+                      component={NavLink}
+                      to="/profile"
+                    >
+                      Profile
+                    </Anchor>
+                    <Button
+                      sx={{ maxWidth: 340 }}
+                      mx="auto"
+                      size="xs"
+                      variant="outline"
+                      color="dark"
+                      radius="xl"
+                      component={Link}
+                      to="/campaigns/create"
+                    >
+                      Create a Capaign
+                    </Button>
 
-                  <Anchor
-                    onClick={logout}
-                    styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginLeft:50
-                      },
-                    }}
-                  >
-                    Logout
-                  </Anchor>
+                    <Anchor
+                      onClick={logout}
+                      component={NavLink}
+                      to="/login"
+                      styles={{
+                        root: {
+                          color: "#1F1F37",
+                          marginLeft: 50,
+                        },
+                      }}
+                    >
+                      Logout
+                    </Anchor>
                   </div>
                   {/* <ActionIcon onClick={logout}>
                     <Logout size={48} strokeWidth={2} color={"black"} />
                   </ActionIcon> */}
                 </>
-                
               )}
             </div>
           </Header>
         }
         navbar={
           <Navbar
-          
             styles={{
               root: {
                 // flexDirection: "row",
@@ -193,8 +191,6 @@ const Layout = ({ children }) => {
                 justifyContent: "flex-end",
                 padding: "0",
                 color: "#1F1F37",
-                
-                
               },
             }}
             className={classes.navbar}
@@ -206,12 +202,12 @@ const Layout = ({ children }) => {
                 {/* <Image height={50} width={120} src={logoMakeTD} /> */}
                 <Space w={600} />
                 <Anchor
-                styles={{
-                  root: {
-                    color: "#1F1F37",
-                    marginTop:10
-                  },
-                }}
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                    },
+                  }}
                   component={NavLink}
                   to="/signup"
                   style={({ isActive }) =>
@@ -221,12 +217,13 @@ const Layout = ({ children }) => {
                   Signup
                 </Anchor>
                 <Space w={50} />
-                <Anchor styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginTop:10
-                      },
-                    }}
+                <Anchor
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                    },
+                  }}
                   component={NavLink}
                   to="/login"
                   style={({ isActive }) =>
@@ -242,12 +239,12 @@ const Layout = ({ children }) => {
                 <Space w={680} />
 
                 <Anchor
-                styles={{
-                  root: {
-                    color: "#1F1F37",
-                    marginTop:10
-                  },
-                }}
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                    },
+                  }}
                   component={NavLink}
                   to="/"
                   style={({ isActive }) =>
@@ -258,12 +255,12 @@ const Layout = ({ children }) => {
                 </Anchor>
                 <Space w={50} />
                 <Anchor
-                styles={{
-                  root: {
-                    color: "#1F1F37",
-                    marginTop:10
-                  },
-                }}
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                    },
+                  }}
                   component={NavLink}
                   to="/campaigns"
                   style={({ isActive }) =>
@@ -274,13 +271,13 @@ const Layout = ({ children }) => {
                 </Anchor>
                 <Space w={50} />
                 <Anchor
-                styles={{
-                  root: {
-                    color: "#1F1F37",
-                    marginTop:10,
-                    marginBottom:10
-                  },
-                }}
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                      marginBottom: 10,
+                    },
+                  }}
                   component={NavLink}
                   to="/profile"
                   style={({ isActive }) =>
@@ -304,13 +301,19 @@ const Layout = ({ children }) => {
                   Create a Capaign
                 </Button>
                 <Space w={50} />
-                <Anchor styles={{
-                      root: {
-                        color: "#1F1F37",
-                        marginTop:10
-                      },
-                    }}
-                onClick={logout}>Logout</Anchor>
+                <Anchor
+                  styles={{
+                    root: {
+                      color: "#1F1F37",
+                      marginTop: 10,
+                    },
+                  }}
+                  onClick={logout}
+                  component={NavLink}
+                  to="/login"
+                >
+                  Logout
+                </Anchor>
 
                 {/* <ActionIcon onClick={logout}>
                   <Logout size={48} strokeWidth={2} color={"black"} />
@@ -330,7 +333,7 @@ const Layout = ({ children }) => {
                 justifyContent: "flex-end",
                 padding: "0",
                 color: "#1F1F37",
-                borderTop:"none"
+                borderTop: "none",
               },
             }}
           >

@@ -17,9 +17,7 @@ function Home() {
   return (
     <Box>
       <div className="homeBox">
-        <div
-          style={{ width: 350, marginLeft: "auto", marginRight: "auto" }}
-        ></div>
+       
         <div style={{ width: 120, marginLeft: "auto", marginRight: "auto" }}>
           <Image src={home} />
         </div>
@@ -29,7 +27,8 @@ function Home() {
         </Title>
         <Space h={40} />
         <Text size="lg" align="center">
-          Launch a crowdfunding in 5 minutes or donate generously.
+        People all over the world are raising money for what they are passionate about.
+
         </Text>
         <Space h={40} />
         <Button
