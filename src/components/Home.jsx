@@ -3,6 +3,7 @@ import AddCampaign from "./AddCampaign";
 import { Group, Button, Title, Text, Space, Image, Box } from "@mantine/core";
 import { Link } from "react-router-dom";
 import home from "../img/home.png";
+import startnow from "../img/startnow.png";
 import SampleCards from "./SampleCards";
 import Steps from "./Steps";
 
@@ -44,16 +45,12 @@ function Home() {
         </Button>
         <Space h={300} />
 
-
         <Title order={2} align="center">
-          Raising funds on GoFundMe only takes a few minutes
+          Raising funds on MakeTheDifference only takes a few minutes
         </Title>
-        <Space h={80} />
+        <Space h={50} />
         <Steps />
-      </div>  
-     
-   
-
+      </div>
 
       <div>
         <Space h={300} />
@@ -78,7 +75,12 @@ function Home() {
       >
         Join Now
       </Button>
-      <Space h={160} />
+      <Space h={50} />
+      <div style={{ width: 120, marginLeft: "auto", marginRight: "auto" }}>
+        <Image width={200} src={startnow} />
+      </div>
+
+      <Space h={120} />
     </Box>
   );
 }
