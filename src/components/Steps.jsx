@@ -14,13 +14,16 @@ function Steps() {
         flexWrap:'wrap',
         padding: 20,
         justifyContent: "space-evenly",
+        marginBottom:80
       }}
     >
       
 
       
      
-  <Box>
+  <Box style={{
+            marginBottom:130
+          }} >
   <Image  width={60} src={one} 
   style={{
         marginLeft:150
@@ -28,12 +31,14 @@ function Steps() {
       <Space h={20} />
         <Title order={3}>Start with the basics</Title>
         <Text>Start by giving your campaign a name and location.</Text>
-    
+        <Space w={20} />
     </Box>    
       
         
 
-      <Box>
+      <Box style={{
+            marginBottom:130
+          }} >
         <Image width={60} src={two} 
         style={{
             marginLeft:130
@@ -41,6 +46,7 @@ function Steps() {
           <Space h={20} />
         <Title order={3}>Tell your story</Title>
         <Text>We will guide you with advice at every step.</Text>
+        <Space w={20} />
       </Box>
 
       <Box>
@@ -51,6 +57,7 @@ function Steps() {
           <Space h={20} />
         <Title order={3}>Share with family and friends</Title>
         <Text>There are people who want to help you.</Text>
+        <Space w={20} />
       </Box>
     </div>
   );

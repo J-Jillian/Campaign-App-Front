@@ -35,7 +35,7 @@ const AllCampsPage = () => {
 
         </Text>
         <Space h={40} />
-        <Button
+        {/* <Button
           align="center"
           variant="outline"
           color="dark"
@@ -45,7 +45,7 @@ const AllCampsPage = () => {
           to="/signup"
         >
           Start a Campaign
-        </Button>
+        </Button> */}
       </div>
       <Box
         mx="auto"
@@ -54,7 +54,7 @@ const AllCampsPage = () => {
           gridTemplate: "1fr / 1fr 1fr",
           gridAutoRows: "1fr",
           gap: "20px",
-          margin: "100px",
+      
           maxWidth: 600,
         }}
       >

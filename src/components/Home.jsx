@@ -22,6 +22,7 @@ function Home() {
           <Image src={world} />
         </div>
         <Space h={20} />
+        <Space w={20} />
         <Title order={1} align="center">
           Let's make the difference together
         </Title>
@@ -52,7 +53,7 @@ function Home() {
       </div>
 
       <div>
-        <Space h={300} />
+        <Space h={200} />
         <Title align="center">Featured Campaigns</Title>
         <Space h={80} />
         <SampleCards />
