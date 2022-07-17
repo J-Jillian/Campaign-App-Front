@@ -53,7 +53,7 @@ const AddCampaign = () => {
   return (
     <div>
       <Box sx={{ maxWidth: 340 }} mx="auto">
-        <Space h={100} />
+        <Space h={80} />
         <Title>Let's start fundraising</Title>
         <Space h="md" />
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -97,6 +97,7 @@ const AddCampaign = () => {
           >
             Create a campaign
           </Button>
+          <Space h={120} />
         </form>
       </Box>
     </div>

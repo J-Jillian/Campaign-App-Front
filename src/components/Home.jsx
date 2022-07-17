@@ -2,7 +2,7 @@ import React from "react";
 import AddCampaign from "./AddCampaign";
 import { Group, Button, Title, Text, Space, Image, Box } from "@mantine/core";
 import { Link } from "react-router-dom";
-import home from "../img/home.png";
+import world from "../img/world.png";
 import startnow from "../img/startnow.png";
 import SampleCards from "./SampleCards";
 import Steps from "./Steps";
@@ -18,8 +18,8 @@ function Home() {
     <Box>
       <div className="homeBox">
        
-        <div style={{ width: 120, marginLeft: "auto", marginRight: "auto" }}>
-          <Image src={home} />
+        <div style={{ width: 180, marginLeft: "auto", marginRight: "auto" }}>
+          <Image src={world} />
         </div>
         <Space h={20} />
         <Title order={1} align="center">
@@ -57,7 +57,7 @@ function Home() {
         <Space h={80} />
         <SampleCards />
       </div>
-
+{/* 
       <Space h={160} />
       <Title order={2} align="center">
         Ready to start? Join thousands of people today.
@@ -72,12 +72,12 @@ function Home() {
         component={Link}
         to="/signup"
       >
-        Join Now
+        Start a Campaign
       </Button>
       <Space h={50} />
       <div style={{ width: 120, marginLeft: "auto", marginRight: "auto" }}>
         <Image width={200} src={startnow} />
-      </div>
+      </div> */}
 
       <Space h={120} />
     </Box>
