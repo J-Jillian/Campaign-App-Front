@@ -73,7 +73,7 @@ export const checkToken = async token => {
       Authorization: `Bearer ${token}`,
     },
   })
-  const parsed = await response.json()
+  const parsed = await response.json();
 
   return parsed
 
